@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk4n2mch7kkuh"]
+
+[ext_resource type="Texture2D" uid="uid://bag2ummx1de1c" path="res://assets/ChatGPT Image Apr 5, 2025, 05_13_45 PM.png" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://b5nvair2oymd8" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c8rsoscnh8avh" path="res://scenes/dice.tscn" id="2_0wfyh"]
+
+[sub_resource type="SystemFont" id="SystemFont_sugp2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font = SubResource("SystemFont_sugp2")
+font_size = 50
+outline_size = 3
+shadow_size = 6
+shadow_color = Color(0.00784314, 0.027451, 0.0235294, 1)
+shadow_offset = Vector2(5, 5)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_sugp2")
+metadata/_edit_lock_ = true
+
+[node name="ChatGptImageApr5,2025,051345Pm" type="Sprite2D" parent="."]
+position = Vector2(513, 515)
+texture = ExtResource("1_o5qli")
+metadata/_edit_lock_ = true
+
+[node name="red_dice" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(215, 501)
+animation_name = "roll_red"
+
+[node name="white_dice" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(808, 491)
+animation_name = "roll_white"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 354.0
+offset_top = 105.0
+offset_right = 645.0
+offset_bottom = 172.0
+text = "Roll the Dice!"
+label_settings = SubResource("LabelSettings_jyhfs")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
